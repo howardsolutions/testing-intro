@@ -23,6 +23,15 @@ describe('subtract', () => {
     it('should subtract one from another', () => {
         expect(subtract(4, 2)).toBe(2);
       });
+
+    it("should default undefined values to 0", () => {
+      expect(subtract(3)).toBe(3);
+      expect(subtract(undefined, 3)).toBe(-3);
+    })
+    it("should default to 0 if either argument is null", () => {
+      expect(subtract(null, 3)).toBe(-3);
+      expect(subtract(4, null)).toBe(4);
+    })
 });
 
 describe('multiply', () => {
@@ -35,4 +44,7 @@ describe('divide', () => {
     it("should divide by one number", () => {
         expect(divide(4, 2)).toBe(2)
     })
+    it("should return null if dividing by 0", () => {
+        expect(divide(4, 0)).toBeNull()
+    })   
 });
