@@ -15,3 +15,5 @@ npm install
 2. Write test is not hard. There're only codes that hard to test.
 
 3. Test Driven Development (TDD): Write the test first, then implement the function so the test passes.
+
+4. TDD - It's hard to write code that's hard to test IF you start with the tests and make them pass.
