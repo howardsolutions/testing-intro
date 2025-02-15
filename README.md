@@ -1,12 +1,5 @@
 ## Testing Fundamentals Course
 
-This is a companion repository for the [Testing Fundamentals](https://frontendmasters.com/courses/testing/) course on Frontend Masters.
-[![Frontend Masters](https://static.frontendmasters.com/assets/brand/logos/full.png)](https://frontendmasters.com/courses/testing/)
-
-## Setup Instructions
-
-> We recommend using Node.js version 20+ for this course
-
 Clone this repository and install the dependencies:
 
 ```bash
@@ -14,3 +7,11 @@ git clone https://github.com/stevekinney/introduction-to-testing.git
 cd introduction-to-testing
 npm install
 ```
+
+## There are a few workshop notes:
+
+1. Your test passed doesn't equal your code work. It just means your tests doesn't fail
+
+2. Write test is not hard. There're only codes that hard to test.
+
+3. Test Driven Development (TDD): Write the test first, then implement the function so the test passes.

@@ -1,9 +1,26 @@
 import { describe, it, expect } from 'vitest';
+import { add, divide, multiply, subtract } from './arithmetic';
 
-describe.todo('add', () => {});
+describe('add', () => {
+  it('should add two possitive numbers', () => {
+    expect(add(2, 2)).toBe(4);
+  });
+});
 
-describe.todo('subtract', () => {});
+describe('subtract', () => {
+    it('should subtract one from another', () => {
+        expect(subtract(4, 2)).toBe(2);
+      });
+});
 
-describe.todo('multiply', () => {});
+describe('multiply', () => {
+    it("should mutiply two number", () => {
+        expect(multiply(2, 2)).toBe(4)
+    })
+});
 
-describe.todo('divide', () => {});
+describe('divide', () => {
+    it("should divide by one number", () => {
+        expect(divide(4, 2)).toBe(2)
+    })
+});
