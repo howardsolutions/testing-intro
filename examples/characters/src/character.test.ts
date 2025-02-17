@@ -3,7 +3,7 @@ import { Character } from './character.js';
 import { Person } from './person.js';
 
 describe('Character', () => {
-  it.todo(
+  it(
     'should create a character with a first name, last name, and role',
     () => {},
   );
