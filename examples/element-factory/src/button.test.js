@@ -1,22 +1,30 @@
+import { fireEvent, screen } from '@testing-library/dom';
 import { createButton } from './button.js';
+import { userEvent } from '@testing-library/user-event';
 
 describe('createButton', () => {
-  it('should create a button element', () => {
-    const button = createButton();
+  let button;
 
-    expect(button).toBeInstanceOf(HTMLButtonElement);
+  afterEach(() => {
+    document.body.innerHTML = '';
+  });
+
+  beforeEach(() => {
+    document.body.appendChild(createButton());
+    button = screen.getByRole('button', { name: 'Click Me' });
+  });
+
+  it('should create a button element', () => {
+    expect(button).toBeInTheDocument();
   });
 
   it('should have the text "Click Me"', () => {
-    const button = createButton();
-
     expect(button).toHaveTextContent('Click Me');
   });
 
   it('should change the text to "Clicked!" when clicked', async () => {
-    const button = createButton();
-
-    button.click();
+    // fireEvent(button, new MouseEvent('click'));
+    await userEvent.click(button);
 
     expect(button).toHaveTextContent('Clicked');
   });
