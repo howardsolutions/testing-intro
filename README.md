@@ -88,4 +88,8 @@ Then HOW do we make sure it's actually isolated
 
 - Mock: a function that you plan on just being a placeholder for something elses.
 
-- Spies: Keep what you have before then wraps in some abilities to have some introspection on that.
+- Spies: Keep what you have before then wraps in some abilities to have some introspection on that. 
+
+Spying is just letting the inital things happen.
+
+Mock is replacing with ur own behavior.
