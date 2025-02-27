@@ -83,3 +83,9 @@ Then HOW do we make sure it's actually isolated
 - `vi.resetAllMocks` : call `.mockReset()` on all the spies. It will REPLACE ANY MOCK IMPLEMENTATIONS WITH AN EMPTY FUNCTION.
 
 - `vi.clearAllMocks` : call `.mockResotore()` on each and every mock. This one RERTURNS the World to its ORIGINAL STATE.
+
+### Mock and Spies
+
+- Mock: a function that you plan on just being a placeholder for something elses.
+
+- Spies: Keep what you have before then wraps in some abilities to have some introspection on that.
