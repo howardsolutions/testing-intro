@@ -1,6 +1,4 @@
-import { vi, describe, it, expect } from 'vitest';
-
-vi.useFakeTimers();
+import { vi, describe, it, expect, beforeEach, afterEach } from 'vitest';
 
 function delay(callback) {
   setTimeout(() => {
@@ -9,5 +7,23 @@ function delay(callback) {
 }
 
 describe('delay function', () => {
-  it.todo('should call callback after delay', () => {});
+  beforeEach(() => {
+    vi.useFakeTimers();
+    vi.setSystemTime('2024-02-09');
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
+  it('should call callback after delay', () => {
+    const callback = vi.fn();
+
+    delay(callback);
+    // vi.advanceTimersByTime(2000);
+    // another way to do that .advanceTimersToNextTimer() - forward time until setTimeOut is called
+    vi.advanceTimersToNextTimer();
+
+    expect(callback).toHaveBeenCalled();
+  });
 });

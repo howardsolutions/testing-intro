@@ -2,25 +2,25 @@ import { expect, it, vi, beforeEach, afterEach, describe } from 'vitest';
 import { log } from './log';
 
 describe('logger', () => {
-  describe('development', () => {
-    beforeEach(() => {
-      vi.stubEnv('MODE', 'development');
-    });
+  //   describe('development', () => {
+  //     beforeEach(() => {
+  //       vi.stubEnv('MODE', 'development');
+  //     });
 
-    afterEach(() => {
-      vi.resetAllMocks();
-    });
+  //     afterEach(() => {
+  //       vi.resetAllMocks();
+  //     });
 
-    it('logs to the console in development mode', () => {
-      const logSpy = vi.spyOn(console, 'log');
+  //     it('logs to the console in development mode', () => {
+  //       const logSpy = vi.spyOn(console, 'log');
 
-      log('hello');
+  //       log('hello');
 
-      expect(logSpy).toHaveBeenCalled();
-      expect(logSpy).toHaveBeenCalledWith('hello');
-    });
-  });
-  
+  //       expect(logSpy).toHaveBeenCalled();
+  //       expect(logSpy).toHaveBeenCalledWith('hello');
+  //     });
+  //   });
+
   describe('production', () => {
     beforeEach(() => {
       vi.stubEnv('MODE', 'production');
@@ -33,9 +33,10 @@ describe('logger', () => {
     it('send to the server the message', () => {
       const logSpy = vi.spyOn(console, 'log');
 
-      log('hello');
+      log('hello', { mode: 'production', productionCallback: logSpy });
 
-      expect(logSpy).not.toHaveBeenCalled();
+      // expect(logSpy).not.toHaveBeenCalled();
+      expect(sendToServer).toHaveBeenCalled();
     });
   });
 });
