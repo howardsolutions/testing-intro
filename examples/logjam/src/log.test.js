@@ -1,6 +1,14 @@
 import { expect, it, vi, beforeEach, afterEach, describe } from 'vitest';
 import { log } from './log';
 
+vi.mock('./send-to-server.js', () => {
+  return {
+    sendToServer: vi.fn(),
+  };
+});
+
+import { sendToServer } from './send-to-server';
+
 describe('logger', () => {
   //   describe('development', () => {
   //     beforeEach(() => {
